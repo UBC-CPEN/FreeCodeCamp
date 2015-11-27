@@ -34,8 +34,15 @@ block content
                         i.fa.fa-play
                             | &nbsp; Run tests (ctrl + enter)
                     label.negative-10.btn.btn-primary.btn-lg.btn-block#hintButton
-                        i.fa.fa-question-circle
-                            | &nbsp; Give me a hint
+                    if (hints)
+                        label.negative-10.btn.btn-primary.btn-lg.btn-block#hintButton
+                            i.fa.fa-question-circle
+                                | &nbsp; Give me a hint
+                        .button-spacer
+                        each hint, index in hints
+                            .well.hint(id='hint-'+index)
+                                h4= 'Hint #' + (index + 1)
+                                p= hint
                     .button-spacer
                     .btn-group.input-group.btn-group-justified
                         label.btn.btn-success#trigger-reset-modal
@@ -115,3 +122,10 @@ block content
 
       editor.setOption('lint', false);
       editor.setOption("mode", "text/html");
+    if (hints)
+      - var hintids = [];
+      - for (var index in hints)
+        - hintids.push(index);
+
+      script(type="text/javascript").
+        window.hintids = !{JSON.stringify(hintids)};

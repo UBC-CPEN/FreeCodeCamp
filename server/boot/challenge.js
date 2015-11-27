@@ -313,6 +313,7 @@ module.exports = function(app) {
           head: challenge.head,
           tail: challenge.tail,
           tests: challenge.tests,
+          hints: challenge.hints,
 
           // video challenges
           video: challenge.challengeSeed[0],

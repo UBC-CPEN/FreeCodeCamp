@@ -1475,6 +1475,14 @@ $('#submitButton').on('click', function() {
   bonfireExecute(true);
 });
 
+$('#hintButton').on('click', function() {
+    var hintids = window.hintids || [];
+    var hintidnumber = hintids.shift();
+
+    var hintid = '#hint-' + hintidnumber;
+    $(hintid).show();
+});
+
 $(document).ready(function() {
 
   common.init.forEach(function(init) {
