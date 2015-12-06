@@ -1,0 +1,19 @@
+Hello CPEN 321 TAs.
+
+We the code we wrote is on branch: feature/hint-system.
+
+
+1. What we want to contribute to this project
+
+We want to add a hint system so that the user can ask for a hint during a challenge.
+
+2. A list of all implementation/improvements
+
+Added the hint system UI
+files: client/less/main.less server/views/coursewares/showJS.jade server/views/coursewares/showHTML.jade server/views/coursewares/showBonfire.jade client/commonFramework.js
+
+Added hints
+files: seed/challenges/intermediate-bonfires.json  
+
+Added hint system server code
+files: server/boot/challenge.js 
